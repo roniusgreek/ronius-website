@@ -11,7 +11,7 @@ export default function AboutPreview() {
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
         <Reveal from="start" className="relative order-1 aspect-[4/5] w-full overflow-hidden rounded-xl">
           <Image
-            src="/images/hero-ronius.jpg"
+            src="/images/about-ronius.jpg"
             alt="רוניוס חג'ידאקיס מנגן בוזוקי"
             fill
             sizes="(min-width: 768px) 480px, 100vw"

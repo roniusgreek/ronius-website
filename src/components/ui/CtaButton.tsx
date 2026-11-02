@@ -7,7 +7,8 @@ import { trackEvent, type TrackedEvent } from "@/lib/gtag";
 type Props = {
   href: string;
   children: ReactNode;
-  variant?: "gold" | "outline";
+  variant?: "gold" | "outline" | "whatsapp";
+  icon?: ReactNode;
   className?: string;
   trackAs?: TrackedEvent;
   trackParams?: Record<string, unknown>;
@@ -18,22 +19,31 @@ export default function CtaButton({
   href,
   children,
   variant = "gold",
+  icon,
   className = "",
   trackAs,
   trackParams,
   external = false,
 }: Props) {
   const base =
-    "inline-flex min-h-[44px] items-center justify-center rounded-lg px-7 py-3 text-sm font-medium tracking-wide transition-colors duration-300";
+    "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-wide transition-colors duration-300";
   const variants = {
     gold: "bg-gold text-ink hover:bg-gold/90",
     outline:
       "border border-white/60 text-white hover:bg-white hover:text-navy",
+    whatsapp: "bg-[#25D366] text-white hover:bg-[#20bd5a]",
   };
 
   const handleClick = () => {
     if (trackAs) trackEvent(trackAs, trackParams);
   };
+
+  const content = (
+    <>
+      {icon}
+      {children}
+    </>
+  );
 
   if (external) {
     return (
@@ -44,14 +54,14 @@ export default function CtaButton({
         onClick={handleClick}
         className={`${base} ${variants[variant]} ${className}`}
       >
-        {children}
+        {content}
       </a>
     );
   }
 
   return (
     <Link href={href} onClick={handleClick} className={`${base} ${variants[variant]} ${className}`}>
-      {children}
+      {content}
     </Link>
   );
 }

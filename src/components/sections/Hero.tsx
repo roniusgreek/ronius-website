@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { Mail } from "lucide-react";
 import { home } from "@/content/copy";
 import { buildWaLink } from "@/lib/whatsapp";
 import CtaButton from "@/components/ui/CtaButton";
 import Reveal from "@/components/ui/Reveal";
+import WhatsAppIcon from "@/components/ui/icons/WhatsAppIcon";
 
 export default function Hero() {
   const { hero } = home;
@@ -33,13 +35,14 @@ export default function Hero() {
             <CtaButton
               href={buildWaLink()}
               external
-              variant="outline"
+              variant="whatsapp"
+              icon={<WhatsAppIcon className="h-5 w-5" />}
               trackAs="whatsapp_click"
               trackParams={{ location: "hero" }}
             >
               {hero.ctaWhatsapp}
             </CtaButton>
-            <CtaButton href="/contact/" variant="gold">
+            <CtaButton href="/contact/" variant="gold" icon={<Mail className="h-4 w-4" />}>
               {hero.ctaForm}
             </CtaButton>
           </div>

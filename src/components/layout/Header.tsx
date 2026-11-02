@@ -6,6 +6,7 @@ import Image from "next/image";
 import { NAV_ITEMS } from "@/lib/site";
 import { buildWaLink } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/gtag";
+import WhatsAppIcon from "@/components/ui/icons/WhatsAppIcon";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -41,8 +42,9 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { location: "header" })}
-          className="hidden rounded-full bg-navy px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-navy/90 sm:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#20bd5a] sm:inline-flex"
         >
+          <WhatsAppIcon className="h-4 w-4" />
           דברו איתנו בוואטסאפ
         </a>
 
@@ -85,8 +87,9 @@ export default function Header() {
                   trackEvent("whatsapp_click", { location: "header-mobile" });
                   setOpen(false);
                 }}
-                className="inline-flex rounded-full bg-navy px-5 py-2.5 text-sm font-medium text-white"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-medium text-white"
               >
+                <WhatsAppIcon className="h-4 w-4" />
                 דברו איתנו בוואטסאפ
               </a>
             </li>

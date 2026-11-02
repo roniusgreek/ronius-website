@@ -1,35 +1,46 @@
-import { Heart, Cake, Briefcase, PartyPopper } from "lucide-react";
+import Image from "next/image";
 import { home } from "@/content/copy";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-const icons = [Heart, Cake, Briefcase, PartyPopper];
+// תמונות אמיתיות מתוך הופעות של רוניוס (פריימים מהסרטונים), לפי האפיון המקורי שביקש תמונה ולא אייקון.
+const images = [
+  "/videos/performance-06-poster.jpg",
+  "/videos/performance-01-poster.jpg",
+  "/videos/performance-02-poster.jpg",
+  "/videos/performance-04-poster.jpg",
+];
 
 export default function EventTypes() {
   const { eventTypes } = home;
 
   return (
-    <section className="bg-[#F7F8FA] py-16 sm:py-24">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <Reveal>
           <SectionHeading heading={eventTypes.heading} paragraph={eventTypes.paragraph} />
         </Reveal>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-          {eventTypes.cards.map((card, i) => {
-            const Icon = icons[i];
-            return (
-              <Reveal key={card.title} delay={i * 0.08}>
-                <div className="flex h-full flex-col items-center rounded-lg bg-white p-6 text-center shadow-sm">
-                  <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-navy/5 text-navy">
-                    <Icon strokeWidth={1.5} className="h-7 w-7" />
-                  </span>
+          {eventTypes.cards.map((card, i) => (
+            <Reveal key={card.title} delay={i * 0.08}>
+              <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src={images[i]}
+                    alt={card.title}
+                    fill
+                    sizes="(min-width: 1024px) 280px, 45vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-5 text-center">
                   <h3 className="text-base font-semibold text-ink sm:text-lg">{card.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink/70">{card.description}</p>
                 </div>
-              </Reveal>
-            );
-          })}
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
