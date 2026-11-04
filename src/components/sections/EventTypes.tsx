@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { home } from "@/content/copy";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
+import CtaButton from "@/components/ui/CtaButton";
 
 // תמונות אמיתיות מתוך הופעות של רוניוס (פריימים מהסרטונים), לפי האפיון המקורי שביקש תמונה ולא אייקון.
 const images = [
@@ -24,7 +26,10 @@ export default function EventTypes() {
         <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {eventTypes.cards.map((card, i) => (
             <Reveal key={card.title} delay={i * 0.08}>
-              <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm">
+              <Link
+                href="/events/"
+                className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md"
+              >
                 <div className="relative aspect-[4/3] w-full">
                   <Image
                     src={images[i]}
@@ -38,9 +43,15 @@ export default function EventTypes() {
                   <h3 className="text-base font-semibold text-ink sm:text-lg">{card.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink/70">{card.description}</p>
                 </div>
-              </div>
+              </Link>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <CtaButton href="/events/" variant="outline-navy">
+            {eventTypes.cta}
+          </CtaButton>
         </div>
       </div>
     </section>

@@ -30,7 +30,7 @@ export default function AboutPreview() {
             ))}
           </div>
           <div className="mt-8">
-            <CtaButton href="/performances/" variant="gold">
+            <CtaButton href="/about/" variant="gold">
               {aboutPreview.cta}
             </CtaButton>
           </div>

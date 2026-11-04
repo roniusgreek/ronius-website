@@ -7,7 +7,7 @@ import { trackEvent, type TrackedEvent } from "@/lib/gtag";
 type Props = {
   href: string;
   children: ReactNode;
-  variant?: "gold" | "outline" | "whatsapp";
+  variant?: "gold" | "outline" | "outline-navy" | "whatsapp";
   icon?: ReactNode;
   className?: string;
   trackAs?: TrackedEvent;
@@ -31,6 +31,8 @@ export default function CtaButton({
     gold: "bg-gold text-ink hover:bg-gold/90",
     outline:
       "border border-white/60 text-white hover:bg-white hover:text-navy",
+    "outline-navy":
+      "border border-navy/50 text-navy hover:bg-navy hover:text-white",
     whatsapp: "bg-[#25D366] text-white hover:bg-[#20bd5a]",
   };
 

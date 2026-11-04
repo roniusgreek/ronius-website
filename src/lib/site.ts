@@ -5,6 +5,8 @@ export const CONTACT_EMAIL = "rondeo1985@gmail.com";
 
 export const NAV_ITEMS = [
   { label: "דף הבית", href: "/" },
+  { label: "אודות", href: "/about/" },
   { label: "סרטוני הופעות", href: "/performances/" },
+  { label: "סוגי אירועים", href: "/events/" },
   { label: "יצירת קשר", href: "/contact/" },
 ] as const;
