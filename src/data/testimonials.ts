@@ -27,7 +27,7 @@ export const screenshotTestimonials: ScreenshotTestimonial[] = [
     id: "03",
     src: "/images/testimonials/testimonial-03.webp",
     width: 540,
-    height: 360,
+    height: 258,
     alt: "לקוחה כותבת שרואים את האהבה של רוניוס למוזיקה, ומבקשת להמשיך ולהזמין אותו לאירועים נוספים",
   },
   {
@@ -48,14 +48,14 @@ export const screenshotTestimonials: ScreenshotTestimonial[] = [
     id: "06",
     src: "/images/testimonials/testimonial-06.webp",
     width: 535,
-    height: 285,
+    height: 170,
     alt: "לקוחה מודה שהאורחים נהנו מאוד מההופעה ומאחלת לרוניוס הצלחה",
   },
   {
     id: "07",
     src: "/images/testimonials/testimonial-07.webp",
     width: 615,
-    height: 225,
+    height: 113,
     alt: "לקוחה מודה לרוניוס על ההמלצה וכותבת שתמשיך להמליץ עליו גם בעתיד",
   },
   {
@@ -86,18 +86,4 @@ export const screenshotTestimonials: ScreenshotTestimonial[] = [
     height: 330,
     alt: "לקוח מתנצל על העיכוב בפנייה וכותב תודה ענקית על ערב מושלם שהרגיש כמו ביוון ממש",
   },
-];
-
-export type VoiceTestimonial = {
-  id: string;
-  src: string;
-  durationLabel: string;
-  durationSeconds: number;
-};
-
-// הודעות קוליות אמיתיות מלקוחות, כפי שנשלחו לרוניוס בוואטסאפ.
-export const voiceTestimonials: VoiceTestimonial[] = [
-  { id: "01", src: "/audio/testimonial-01.m4a", durationLabel: "0:19", durationSeconds: 19 },
-  { id: "02", src: "/audio/testimonial-02.m4a", durationLabel: "0:21", durationSeconds: 21 },
-  { id: "03", src: "/audio/testimonial-03.m4a", durationLabel: "0:32", durationSeconds: 32 },
 ];

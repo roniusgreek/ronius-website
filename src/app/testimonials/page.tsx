@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { testimonials, seo } from "@/content/copy";
-import { voiceTestimonials } from "@/data/testimonials";
 import { buildWaLink } from "@/lib/whatsapp";
 import Reveal from "@/components/ui/Reveal";
 import CtaButton from "@/components/ui/CtaButton";
 import WhatsAppIcon from "@/components/ui/icons/WhatsAppIcon";
-import ScreenshotWall from "@/components/testimonials/ScreenshotWall";
-import VoicePlayer from "@/components/testimonials/VoicePlayer";
+import ScreenshotCarousel from "@/components/testimonials/ScreenshotCarousel";
 
 export const metadata: Metadata = {
   title: seo.testimonials.title,
@@ -28,21 +26,8 @@ export default function TestimonialsPage() {
             </p>
           </Reveal>
 
-          <div className="mt-14">
-            <ScreenshotWall />
-          </div>
-
-          <Reveal className="mx-auto mt-16 max-w-3xl text-center">
-            <p className="font-heading italic text-gold text-lg">
-              {testimonials.audioLabel}
-            </p>
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              {voiceTestimonials.map((voice, i) => (
-                <Reveal key={voice.id} delay={i * 0.08}>
-                  <VoicePlayer voice={voice} />
-                </Reveal>
-              ))}
-            </div>
+          <Reveal delay={0.1} className="mt-14">
+            <ScreenshotCarousel />
           </Reveal>
         </div>
       </section>
