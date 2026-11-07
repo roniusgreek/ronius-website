@@ -8,5 +8,6 @@ export const NAV_ITEMS = [
   { label: "אודות", href: "/about/" },
   { label: "סרטוני הופעות", href: "/performances/" },
   { label: "סוגי אירועים", href: "/events/" },
+  { label: "המלצות", href: "/testimonials/" },
   { label: "יצירת קשר", href: "/contact/" },
 ] as const;

@@ -15,6 +15,7 @@ export type TrackedEvent =
   | "whatsapp_click"
   | "generate_lead"
   | "video_play"
+  | "audio_play"
   | "contact_click";
 
 export function trackEvent(
