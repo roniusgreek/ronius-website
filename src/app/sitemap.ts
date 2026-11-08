@@ -10,11 +10,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/testimonials/",
     "/contact/",
   ];
+  const legalRoutes = ["/privacy/", "/accessibility/"];
 
-  return routes.map((route) => ({
-    url: `${SITE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: route === "/" ? 1 : 0.8,
-  }));
+  return [
+    ...routes.map((route) => ({
+      url: `${SITE_URL}${route}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: route === "/" ? 1 : 0.8,
+    })),
+    ...legalRoutes.map((route) => ({
+      url: `${SITE_URL}${route}`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    })),
+  ];
 }

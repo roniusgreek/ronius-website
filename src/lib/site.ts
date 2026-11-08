@@ -11,3 +11,8 @@ export const NAV_ITEMS = [
   { label: "המלצות", href: "/testimonials/" },
   { label: "יצירת קשר", href: "/contact/" },
 ] as const;
+
+export const LEGAL_LINKS = [
+  { label: "מדיניות פרטיות", href: "/privacy/" },
+  { label: "הצהרת נגישות", href: "/accessibility/" },
+] as const;

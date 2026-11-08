@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { NAV_ITEMS, CONTACT_EMAIL } from "@/lib/site";
+import { NAV_ITEMS, LEGAL_LINKS, CONTACT_EMAIL } from "@/lib/site";
 import { WHATSAPP_DISPLAY_NUMBER } from "@/lib/whatsapp";
 
 export default function Footer() {
@@ -25,6 +25,14 @@ export default function Footer() {
         <p className="text-sm text-white/60" dir="ltr">
           {WHATSAPP_DISPLAY_NUMBER} · {CONTACT_EMAIL}
         </p>
+
+        <nav className="flex flex-wrap items-center justify-center gap-4">
+          {LEGAL_LINKS.map((item) => (
+            <a key={item.href} href={item.href} className="text-xs text-white/50 hover:text-gold">
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
         <p className="text-xs text-white/40">
           © {new Date().getFullYear()} רוניוס חג&apos;ידאקיס - זמר יווני ונגן בוזוקי לאירועים

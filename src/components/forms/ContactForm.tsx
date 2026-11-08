@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { contact, EVENT_TYPE_OPTIONS } from "@/content/copy";
 import { trackEvent } from "@/lib/gtag";
 
@@ -146,7 +147,14 @@ export default function ContactForm({
       )}
 
       <p className={`text-xs ${isDark ? "text-white/50" : "text-ink/50"}`}>
-        {contact.privacyNote}
+        {contact.privacyNote}{" "}
+        <Link
+          href="/privacy/"
+          className={`underline ${isDark ? "hover:text-gold" : "hover:text-navy"}`}
+        >
+          {contact.privacyNoteLink}
+        </Link>
+        .
       </p>
     </form>
   );
