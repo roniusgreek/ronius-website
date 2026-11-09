@@ -16,7 +16,6 @@ export default function AboutPage() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h1 className="text-3xl font-bold text-ink sm:text-4xl">{about.title}</h1>
-          <p className="font-heading italic mt-3 text-gold text-lg">{about.subtitle}</p>
         </Reveal>
 
         <div className="mt-14 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
@@ -30,20 +29,46 @@ export default function AboutPage() {
             />
           </Reveal>
 
-          <Reveal delay={0.15} className="order-2 space-y-5 text-center md:text-right">
-            {about.paragraphs.map((p) => (
-              <p key={p} className="text-base leading-relaxed text-ink/75 sm:text-lg">
-                {p}
-              </p>
-            ))}
+          <Reveal delay={0.15} className="order-2 text-center md:text-right">
+            <h2 className="text-2xl font-bold text-ink sm:text-3xl">{about.intro.heading}</h2>
+            <div className="mt-4 space-y-4">
+              {about.intro.body.map((p) => (
+                <p key={p} className="text-base leading-relaxed text-ink/75 sm:text-lg">
+                  {p}
+                </p>
+              ))}
+            </div>
           </Reveal>
         </div>
 
-        <Reveal delay={0.1} className="mt-20 text-center">
-          <h2 className="text-2xl font-bold text-ink sm:text-3xl">{about.closingHeading}</h2>
-          <div className="mt-6">
+        <div className="mx-auto mt-16 max-w-[720px] space-y-10 text-center md:text-right">
+          {about.sections.map((section, i) => (
+            <Reveal key={section.heading} delay={Math.min(i * 0.05, 0.2)}>
+              <h2 className="text-xl font-bold text-ink sm:text-2xl">{section.heading}</h2>
+              <div className="mt-3 space-y-3">
+                {section.body.map((p) => (
+                  <p key={p} className="text-base leading-relaxed text-ink/70">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.1} className="mt-16 text-center">
+          <h2 className="text-2xl font-bold text-ink sm:text-3xl">{about.closing.heading}</h2>
+          {about.closing.body.map((p) => (
+            <p key={p} className="mt-3 text-base leading-relaxed text-ink/70 sm:text-lg">
+              {p}
+            </p>
+          ))}
+          <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <CtaButton href="/performances/" variant="outline-navy">
+              {about.ctaVideos}
+            </CtaButton>
             <CtaButton href="/contact/" variant="gold">
-              {about.cta}
+              {about.ctaBooking}
             </CtaButton>
           </div>
         </Reveal>

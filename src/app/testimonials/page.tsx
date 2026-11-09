@@ -21,13 +21,25 @@ export default function TestimonialsPage() {
             <h1 className="text-3xl font-bold text-ink sm:text-4xl">
               {testimonials.title}
             </h1>
-            <p className="mt-4 text-base leading-relaxed text-ink/70 sm:text-lg">
-              {testimonials.subtitle}
-            </p>
+            <h2 className="mt-4 text-lg font-bold text-ink sm:text-xl">
+              {testimonials.intro.heading}
+            </h2>
+            <div className="mt-2 space-y-2">
+              {testimonials.intro.body.map((p) => (
+                <p key={p} className="text-base leading-relaxed text-ink/70 sm:text-lg">
+                  {p}
+                </p>
+              ))}
+            </div>
           </Reveal>
 
           <Reveal delay={0.1} className="mt-14">
-            <ScreenshotCarousel />
+            <p className="text-center font-heading italic text-gold text-lg">
+              {testimonials.carouselLabel}
+            </p>
+            <div className="mt-6">
+              <ScreenshotCarousel />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -36,8 +48,13 @@ export default function TestimonialsPage() {
         <div className="mx-auto max-w-xl px-4 sm:px-6">
           <Reveal>
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
-              {testimonials.closingHeading}
+              {testimonials.closing.heading}
             </h2>
+            {testimonials.closing.body.map((p) => (
+              <p key={p} className="mt-3 text-base text-white/80 sm:text-lg">
+                {p}
+              </p>
+            ))}
             <div className="mt-6">
               <CtaButton
                 href={buildWaLink()}

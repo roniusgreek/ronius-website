@@ -17,10 +17,20 @@ export default function PerformancesPage() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h1 className="text-3xl font-bold text-ink sm:text-4xl">{performances.title}</h1>
-          <p className="font-heading italic mt-3 text-gold text-lg">{performances.subtitle}</p>
-          <p className="mt-4 text-base leading-relaxed text-ink/70 sm:text-lg">
-            {performances.intro}
-          </p>
+          <div className="mt-6 space-y-6">
+            {performances.sections.map((section) => (
+              <div key={section.heading}>
+                <h2 className="text-lg font-bold text-ink sm:text-xl">{section.heading}</h2>
+                <div className="mt-2 space-y-2">
+                  {section.body.map((p) => (
+                    <p key={p} className="text-base leading-relaxed text-ink/70 sm:text-lg">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14">
@@ -28,7 +38,12 @@ export default function PerformancesPage() {
         </Reveal>
 
         <Reveal delay={0.2} className="mt-16 text-center">
-          <p className="text-lg font-medium text-ink">{performances.bottomNote}</p>
+          <h2 className="text-2xl font-bold text-ink sm:text-3xl">{performances.closing.heading}</h2>
+          {performances.closing.body.map((p) => (
+            <p key={p} className="mt-3 text-lg font-medium text-ink">
+              {p}
+            </p>
+          ))}
           <div className="mt-6">
             <CtaButton href="/contact/" variant="gold">
               {performances.cta}
