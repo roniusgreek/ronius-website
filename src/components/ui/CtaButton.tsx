@@ -8,6 +8,7 @@ type Props = {
   href: string;
   children: ReactNode;
   variant?: "gold" | "outline" | "outline-navy" | "whatsapp";
+  size?: "md" | "lg";
   icon?: ReactNode;
   className?: string;
   trackAs?: TrackedEvent;
@@ -19,14 +20,18 @@ export default function CtaButton({
   href,
   children,
   variant = "gold",
+  size = "md",
   icon,
   className = "",
   trackAs,
   trackParams,
   external = false,
 }: Props) {
-  const base =
-    "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-wide transition-colors duration-300";
+  const sizes = {
+    md: "min-h-[44px] px-7 py-3 text-sm",
+    lg: "min-h-[44px] px-7 py-3 text-sm sm:min-h-[56px] sm:px-9 sm:py-4 sm:text-lg",
+  };
+  const base = `inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-colors duration-300 ${sizes[size]}`;
   const variants = {
     gold: "bg-gold text-ink hover:bg-gold/90",
     outline:
