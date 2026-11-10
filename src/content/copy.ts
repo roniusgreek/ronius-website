@@ -144,7 +144,7 @@ type EventCategory = {
   intro?: string[];
   sections: EventSection[];
   cta: string;
-  video: { src: string; poster: string };
+  image: { src: string; width: number; height: number; alt: string };
 };
 
 function p(text: string): EventContentBlock {
@@ -204,7 +204,12 @@ export const events = {
         },
       ],
       cta: "בדיקת זמינות לחתונה",
-      video: { src: "/videos/performance-06.mp4", poster: "/videos/performance-06-poster.jpg" },
+      image: {
+        src: "/images/events/weddings.webp",
+        width: 1512,
+        height: 1201,
+        alt: "שולחן חתונה יווני מעוצב עם נרות, פרחים ובוזוקי, לאור פנסים בין עצי זית",
+      },
     },
     {
       id: "birthdays",
@@ -244,7 +249,12 @@ export const events = {
         },
       ],
       cta: "דברו איתנו על האירוע שלכם",
-      video: { src: "/videos/performance-01.mp4", poster: "/videos/performance-01-poster.jpg" },
+      image: {
+        src: "/images/events/birthdays.webp",
+        width: 1512,
+        height: 2268,
+        alt: "חגיגת יום הולדת משפחתית בחוץ, סביב עוגה עם נרות ואווירה יוונית חמה",
+      },
     },
     {
       id: "corporate",
@@ -286,7 +296,12 @@ export const events = {
         },
       ],
       cta: "קבלת פרטים והצעת מחיר",
-      video: { src: "/videos/performance-02.mp4", poster: "/videos/performance-02-poster.jpg" },
+      image: {
+        src: "/images/events/corporate.webp",
+        width: 1512,
+        height: 2268,
+        alt: "אירוע חברה אלגנטי במרפסת עם נוף לים, תאורה חמה ובוזוקי",
+      },
     },
     {
       id: "greek-party",
@@ -331,7 +346,12 @@ export const events = {
         },
       ],
       cta: "להזמנת חפלה יוונית",
-      video: { src: "/videos/performance-04.mp4", poster: "/videos/performance-04-poster.jpg" },
+      image: {
+        src: "/images/events/greek-party.webp",
+        width: 1587,
+        height: 2244,
+        alt: "חפלה יוונית בטברנה, שולחן עם מזה ואוזו, דגל יווני ובוזוקי",
+      },
     },
   ] satisfies EventCategory[],
 };

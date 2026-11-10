@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { events, seo } from "@/content/copy";
 import Reveal from "@/components/ui/Reveal";
 import CtaButton from "@/components/ui/CtaButton";
-import VideoCard from "@/components/gallery/VideoCard";
 
 export const metadata: Metadata = {
   title: seo.events.title,
@@ -41,18 +41,17 @@ export default function EventsPage() {
                     reversed ? "md:[&>*:first-child]:order-2" : ""
                   }`}
                 >
-                  <Reveal from="start" className="mx-auto w-full max-w-[280px]">
-                    <VideoCard
-                      video={{
-                        id: category.id,
-                        src: category.video.src,
-                        poster: category.video.poster,
-                        title: category.title,
-                      }}
+                  <Reveal from="start" className="relative mx-auto aspect-[4/5] w-full max-w-[320px] overflow-hidden rounded-xl">
+                    <Image
+                      src={category.image.src}
+                      alt={category.image.alt}
+                      fill
+                      sizes="(min-width: 768px) 320px, 80vw"
+                      className="object-cover"
                     />
                   </Reveal>
 
-                  <Reveal delay={0.1} className="text-center md:text-right">
+                  <Reveal delay={0.1} className="text-right">
                     <h2 className="text-2xl font-bold text-ink sm:text-3xl">{category.heading}</h2>
                     {category.intro?.map((paragraph) => (
                       <p key={paragraph} className="mt-4 text-base leading-relaxed text-ink/70 sm:text-lg">
