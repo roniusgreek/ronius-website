@@ -16,6 +16,7 @@ export const home = {
     tagline: "The Greek Experience",
     paragraph:
       "מביאים את הקסם של יוון לאירוע שלכם, עם מוזיקה יוונית חיה, נגינת בוזוקי ואווירה שאי אפשר להישאר אדישים אליה.",
+    paragraphShort: "מביאים את הקסם של יוון לאירוע שלכם",
     ctaWhatsapp: "דברו איתנו בוואטסאפ",
     ctaForm: "השאירו פרטים",
   },
