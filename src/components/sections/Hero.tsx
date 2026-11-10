@@ -29,10 +29,10 @@ export default function Hero() {
       />
 
       {/* גרדיאנט עדין בחלק העליון בנייד, כדי שהטקסט יהיה קריא בלי להסתיר את רוניוס */}
-      <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-black/45 to-transparent sm:hidden" />
+      <div className="absolute inset-x-0 top-0 h-[32%] bg-gradient-to-b from-black/50 to-transparent sm:hidden" />
 
       <div className="relative mx-auto h-full max-w-[1320px] px-4 sm:px-6">
-        <div className="flex h-full flex-col justify-between py-6 text-center sm:ml-auto sm:max-w-[640px] sm:items-stretch sm:justify-center sm:py-0 sm:text-right">
+        <div className="flex h-full flex-col justify-between py-4 text-center sm:ml-auto sm:max-w-[640px] sm:items-stretch sm:justify-center sm:py-0 sm:text-right">
           <div>
             <Reveal>
               <Image
@@ -40,18 +40,18 @@ export default function Hero() {
                 alt="רוניוס חג'ידאקיס"
                 width={170}
                 height={68}
-                className="mx-auto h-20 w-auto brightness-0 invert sm:mx-0 sm:h-28"
+                className="mx-auto h-12 w-auto brightness-0 invert sm:mx-0 sm:h-28"
               />
             </Reveal>
 
-            <Reveal delay={0.1} className="mt-3 sm:mt-5">
-              <h1 className="text-5xl font-bold leading-tight text-white sm:text-6xl">{hero.title}</h1>
-              <p className="mt-2 text-xl text-white/90 sm:mt-3 sm:text-2xl">{hero.subtitle}</p>
-              <div className="mt-2 sm:mt-4">
-                <p dir="ltr" className="font-heading italic text-gold text-3xl sm:text-4xl">
+            <Reveal delay={0.1} className="mt-2 sm:mt-5">
+              <h1 className="text-3xl font-bold leading-tight text-white sm:text-6xl">{hero.title}</h1>
+              <p className="mt-1 text-sm text-white/90 sm:mt-3 sm:text-2xl">{hero.subtitle}</p>
+              <div className="mt-1 sm:mt-4">
+                <p dir="ltr" className="font-heading italic text-gold text-xl sm:text-4xl">
                   {hero.tagline}
                 </p>
-                <svg viewBox="0 0 220 14" className="mx-auto mt-1 block h-3 w-28 text-gold sm:ml-auto sm:mr-0 sm:w-40" fill="none">
+                <svg viewBox="0 0 220 14" className="mx-auto mt-1 block h-2 w-16 text-gold sm:ml-auto sm:mr-0 sm:h-3 sm:w-40" fill="none">
                   <path
                     d="M2 8C40 2 90 2 110 7C130 12 180 12 218 4"
                     stroke="currentColor"
@@ -60,7 +60,7 @@ export default function Hero() {
                   />
                 </svg>
               </div>
-              <p className="mt-4 text-lg text-white/90 sm:hidden">{hero.paragraphShort}</p>
+              <p className="mt-2 text-xs leading-snug text-white/90 sm:hidden">{hero.paragraphShort}</p>
               <p className="mt-4 hidden text-base leading-relaxed text-white/85 sm:block sm:ml-auto sm:max-w-[440px] sm:text-lg">
                 {hero.paragraph}
               </p>
