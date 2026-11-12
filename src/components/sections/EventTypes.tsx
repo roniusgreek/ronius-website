@@ -11,6 +11,7 @@ const images = [
   "/videos/performance-01-poster.jpg",
   "/videos/performance-02-poster.jpg",
   "/videos/performance-04-poster.jpg",
+  "/videos/performance-05-poster.jpg",
 ];
 
 export default function EventTypes() {
@@ -23,9 +24,13 @@ export default function EventTypes() {
           <SectionHeading heading={eventTypes.heading} paragraph={eventTypes.paragraph} />
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-5">
           {eventTypes.cards.map((card, i) => (
-            <Reveal key={card.title} delay={i * 0.08}>
+            <Reveal
+              key={card.title}
+              delay={i * 0.08}
+              className={i === eventTypes.cards.length - 1 ? "col-span-2 mx-auto w-full max-w-[calc(50%-0.5rem)] lg:col-span-1 lg:max-w-none" : ""}
+            >
               <Link
                 href="/events/"
                 className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md"
