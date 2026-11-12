@@ -461,7 +461,7 @@ export const privacyPolicy: LegalContent = {
     },
   ],
   contactNote:
-    "לכל שאלה בנושא פרטיות, אפשר לפנות אלינו בטלפון 050-4448767 או במייל rondeo1985@gmail.com.",
+    "לכל שאלה בנושא פרטיות, אפשר לפנות אלינו בטלפון 050-4448767 או במייל Ronius.greek@gmail.com.",
 };
 
 export const accessibilityStatement: LegalContent = {
@@ -493,7 +493,7 @@ export const accessibilityStatement: LegalContent = {
       ],
     },
   ],
-  contactNote: "טלפון: 050-4448767 · מייל: rondeo1985@gmail.com",
+  contactNote: "טלפון: 050-4448767 · מייל: Ronius.greek@gmail.com",
 };
 
 // טיוטה — כותרות ותיאורי SEO, מנוסחים לפי מילות המפתח שהוגדרו באפיון
