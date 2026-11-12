@@ -16,3 +16,9 @@ export const LEGAL_LINKS = [
   { label: "מדיניות פרטיות", href: "/privacy/" },
   { label: "הצהרת נגישות", href: "/accessibility/" },
 ] as const;
+
+export const SOCIAL_LINKS = [
+  { label: "פייסבוק", href: "https://www.facebook.com/profile.php?id=61592977896298" },
+  { label: "אינסטגרם", href: "https://www.instagram.com/ronius_greek_singer/" },
+  { label: "טיקטוק", href: "https://www.tiktok.com/@roniusgreeksinger?_r=1&_t=ZS-9BLakIoMjNU" },
+] as const;

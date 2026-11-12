@@ -1,6 +1,15 @@
 import Image from "next/image";
-import { NAV_ITEMS, LEGAL_LINKS, CONTACT_EMAIL } from "@/lib/site";
+import { NAV_ITEMS, LEGAL_LINKS, SOCIAL_LINKS, CONTACT_EMAIL } from "@/lib/site";
 import { WHATSAPP_DISPLAY_NUMBER } from "@/lib/whatsapp";
+import FacebookIcon from "@/components/ui/icons/FacebookIcon";
+import InstagramIcon from "@/components/ui/icons/InstagramIcon";
+import TikTokIcon from "@/components/ui/icons/TikTokIcon";
+
+const SOCIAL_ICONS = {
+  פייסבוק: FacebookIcon,
+  אינסטגרם: InstagramIcon,
+  טיקטוק: TikTokIcon,
+} as const;
 
 export default function Footer() {
   return (
@@ -21,6 +30,24 @@ export default function Footer() {
             </a>
           ))}
         </nav>
+
+        <div className="flex items-center justify-center gap-3">
+          {SOCIAL_LINKS.map((item) => {
+            const Icon = SOCIAL_ICONS[item.label];
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.label}
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-gold hover:text-navy"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            );
+          })}
+        </div>
 
         <p className="text-sm text-white/60" dir="ltr">
           {WHATSAPP_DISPLAY_NUMBER} · {CONTACT_EMAIL}

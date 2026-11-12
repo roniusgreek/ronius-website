@@ -6,7 +6,56 @@ export type PerformanceVideo = {
 };
 
 // מערך מונחה-נתונים: הוספת סרטון נוספת היא שורה אחת כאן, בלי לגעת ברכיבים.
+// סדר המערך = סדר התצוגה (גם בעמוד סרטוני ההופעות וגם בתצוגה המקוצרת בדף הבית), לכן הסרטונים החדשים בראש הרשימה.
 export const videos: PerformanceVideo[] = [
+  {
+    id: "performance-07",
+    src: "/videos/performance-07.mp4",
+    poster: "/videos/performance-07-poster.jpg",
+    title: "רוניוס בהופעה חיה באירוע",
+  },
+  {
+    id: "performance-08",
+    src: "/videos/performance-08.mp4",
+    poster: "/videos/performance-08-poster.jpg",
+    title: "רוניוס מנגן בוזוקי מקרוב",
+  },
+  {
+    id: "performance-09",
+    src: "/videos/performance-09.mp4",
+    poster: "/videos/performance-09-poster.jpg",
+    title: "רוניוס שר ומנגן בחגיגה",
+  },
+  {
+    id: "performance-10",
+    src: "/videos/performance-10.mp4",
+    poster: "/videos/performance-10-poster.jpg",
+    title: "רגע של נגינה עם הבוזוקי",
+  },
+  {
+    id: "performance-11",
+    src: "/videos/performance-11.mp4",
+    poster: "/videos/performance-11-poster.jpg",
+    title: "רוניוס מופיע לקהל שמח",
+  },
+  {
+    id: "performance-12",
+    src: "/videos/performance-12.mp4",
+    poster: "/videos/performance-12-poster.jpg",
+    title: "שירה ונגינה יוונית חיה",
+  },
+  {
+    id: "performance-13",
+    src: "/videos/performance-13.mp4",
+    poster: "/videos/performance-13-poster.jpg",
+    title: "רוניוס מנגן באווירה חגיגית",
+  },
+  {
+    id: "performance-14",
+    src: "/videos/performance-14.mp4",
+    poster: "/videos/performance-14-poster.jpg",
+    title: "רוניוס שר בליווי בוזוקי",
+  },
   {
     id: "performance-01",
     src: "/videos/performance-01.mp4",
