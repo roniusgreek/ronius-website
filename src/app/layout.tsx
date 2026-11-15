@@ -5,9 +5,24 @@ import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import PageViewTracker from "@/components/analytics/PageViewTracker";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/site";
 import { seo } from "@/content/copy";
 import "./globals.css";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": ["MusicGroup", "LocalBusiness"],
+  name: "רוניוס חג'ידאקיס",
+  alternateName: "Ronius",
+  description: "זמר יווני ונגן בוזוקי להופעות באירועים בישראל: חתונות, ימי הולדת, אירועי חברה, חפלות יווניות וברית/בריתה.",
+  url: SITE_URL,
+  image: `${SITE_URL}/images/logo.png`,
+  telephone: "+972504448767",
+  email: CONTACT_EMAIL,
+  genre: "Greek music",
+  areaServed: "IL",
+  sameAs: SOCIAL_LINKS.map((link) => link.href),
+};
 
 const heebo = Heebo({
   variable: "--font-heebo",
@@ -40,6 +55,10 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl" className={`${heebo.variable} ${manrope.variable} h-full`}>
       <body className="flex min-h-full flex-col font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <GoogleAnalytics />
         <PageViewTracker />
         <Header />
