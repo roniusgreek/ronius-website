@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import MetaPixel from "@/components/analytics/MetaPixel";
 import PageViewTracker from "@/components/analytics/PageViewTracker";
 import { SITE_URL, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/site";
 import { seo } from "@/content/copy";
@@ -60,6 +61,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <GoogleAnalytics />
+        <MetaPixel />
         <PageViewTracker />
         <Header />
         <main className="flex-1">{children}</main>
